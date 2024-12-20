@@ -1,4 +1,4 @@
-package EvenOddQueue;
+package EvenOddQueueSolution;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
@@ -11,9 +11,9 @@ public class EvenOddQueueTest {
 		e.enqueue(2);
 		e.enqueue(3);
 		
-		assertEquals(1, e.dequeue());
-		assertEquals(2, e.dequeue());
-		assertEquals(3, e.dequeue());
+		assertEquals(e.dequeue(), 1);
+		assertEquals(e.dequeue(), 2);
+		assertEquals(e.dequeue(), 3);
 	}
 	
 	@Test
@@ -23,10 +23,10 @@ public class EvenOddQueueTest {
 		e.enqueue(2);
 		e.enqueue(3);
 				
-		assertEquals(1, e.dequeueOdd());
-		assertEquals(3, e.dequeueOdd());
-		assertEquals(null, e.dequeueOdd());
-		assertEquals(1, e.size());
+		assertEquals(e.dequeueOdd(), 1);
+		assertEquals(e.dequeueOdd(), 3);
+		assertEquals(e.dequeueOdd(), null);
+		assertEquals(e.size(), 1);
 	}
 	
 	@Test
@@ -37,10 +37,10 @@ public class EvenOddQueueTest {
 		e.enqueue(3);
 		e.enqueue(4);
 				
-		assertEquals(2, e.dequeueEven());
-		assertEquals(1, e.peekOdd());
-		assertEquals(4, e.dequeueEven());
-		assertEquals(null, e.dequeueEven());
-		assertEquals(null, e.size());
+		assertEquals(e.dequeueEven(), 2);
+		assertEquals(e.peekOdd(), 1);
+		assertEquals(e.dequeueEven(), 4);
+		assertEquals(e.dequeueEven(), null);
+		assertEquals(e.size(), 2);
 	}
 }
